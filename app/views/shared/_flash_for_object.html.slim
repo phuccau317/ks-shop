@@ -1,0 +1,9 @@
+- if object.present? && object.errors.any?
+  .alert.fade.in.alert-danger
+    button.close data-dismiss="alert" 
+      | ×
+    ul
+      - object.errors.values.each do |msg|
+        - if msg.count != 0
+          li
+            = msg.join(', ')

@@ -1,0 +1,20 @@
+$purple: #AE7EDA;
+$purple_01: #934DCA;
+$purple_02: #7A40B8;
+
+.front-end{
+
+  &.front-end-user{
+    .nav.nav-tabs{
+      margin-top: 30px;
+    }
+    
+    .tab-content{
+      min-height: 600px;
+      float: left;
+      width: 100%;
+      padding: 10px;
+    }
+  }
+
+}

@@ -1,0 +1,53 @@
+.col-xs-6
+  h2
+    = t("titles.my_products")
+.col-xs-6.text-right
+  button.btn.btn-purple#btn-add-product-modal data-toggle="modal" data-target="#add-product-modal" 
+    .fa.fa-plus
+      = " #{t("titles.add_new")}"
+.clearfix
+- current_user.products.active.in_groups_of(4,false) do |products|
+  .portfolio-group
+    - products.each do |product|
+      .col-xs-3.portfolio-item-2 title="#{product.m_name}"
+        = link_to product_path(product)
+          = image_tag "ex-product-01.jpg", class: "product-img"
+        .asside
+          .name
+            = link_to product.m_name, product_path(product), target: "blank"
+          .desc
+            = product.m_description.truncate(28)
+          - unless product.m_price.blank?
+            span.price class="#{product.m_sale_price.blank? ? '' : 'line-through'}"
+              = product.m_price
+          - unless product.m_sale_price.blank?
+            span.sale_price
+              = product.m_sale_price
+        .asside-actions-top
+          button.fa.fa-edit.fa-2x.btn-update id="btn-update-product-#{product.id}-modal" data-toggle="modal" data-target="#update-product-#{product.id}-modal" title="#{t('titles.update')}"
+
+        .modal.modal-purple.fade id="update-product-#{product.id}-modal" tabindex="-1" role="dialog" aria-labelledby="update-product-#{product.id}-modal-label" aria-hidden="true"
+          / = render partial: "products/form_update", locals: {product: product}
+
+        javascript:
+          $(document).ready(function(){
+            $("#btn-update-product-#{product.id}-modal").click(function(){
+              $("#update-product-#{product.id}-modal").html("#{j render partial: 'products/form_update', locals: {product: product}}");
+            });
+            $('#update-product-#{product.id}-modal').on('hidden.bs.modal', function (e) {
+              $(this).html("");
+            });
+          });
+
+.modal.modal-purple.fade#add-product-modal tabindex="-1" role="dialog" aria-labelledby="add-product-modal-label" aria-hidden="true"
+  / = render "products/form"
+
+javascript:
+  $(document).ready(function(){
+    $("#btn-add-product-modal").click(function(){
+      $("#add-product-modal").html("#{j render 'products/form'}");
+    });
+    $('#add-product-modal').on('hidden.bs.modal', function (e) {
+      $(this).html("");
+    });
+  });

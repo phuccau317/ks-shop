@@ -1,0 +1,85 @@
+.container.index-container-01
+  .row
+    .col-xs-12
+      h1
+        | Listing products
+
+      table
+        thead
+          tr
+            th 
+              | name 
+            th 
+              | description 
+            th 
+              | status 
+            th 
+              | price 
+            th 
+              | sale_price 
+            th 
+              | weight 
+            th 
+              | length 
+            th 
+              | width 
+            th 
+              | height 
+            th 
+              | attributes 
+            th 
+              | visibility 
+            th 
+              | parent_id 
+            th 
+              | category_id 
+            th 
+              | user_id 
+            th 
+              | 
+            th 
+              | 
+            th 
+              | 
+
+        tbody
+          - @products.each do |product|
+            tr
+              td
+                = product.m_name
+              td
+                = product.m_description
+              td
+                = product.m_status
+              td
+                = product.m_price
+              td
+                = product.m_sale_price
+              td
+                = product.m_weight
+              td
+                = product.m_length
+              td
+                = product.m_width
+              td
+                = product.m_height
+              td
+                = product.m_attributes
+              td
+                = product.m_visibility
+              td
+                = product.parent_id
+              td
+                = product.category_id
+              td
+                = product.user_id
+              td
+                = link_to 'Show', product
+              td
+                = link_to 'Edit', edit_product_path(product)
+              td
+                = link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }
+
+      br
+
+      = link_to 'New product', new_product_path

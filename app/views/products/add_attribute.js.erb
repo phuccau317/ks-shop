@@ -1,0 +1,6 @@
+$(".product_attribute_fields").append("<%=j render partial: 'products/attribute', locals: {name: nil, value: nil} %>");
+
+$(".btn-remove").click(function(){
+  id = $(this).attr("id").split("-")[2];
+  $("#attribute-"+id).remove();
+});

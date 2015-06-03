@@ -1,0 +1,54 @@
+h2
+  = t("titles.profile_of_user", text: current_user.m_first_name.blank? ? current_user.email : current_user.m_first_name)
+
+= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, role: "form" }) do |f|
+  .col-xs-5
+    = devise_error_messages!
+
+    .form-group
+      = f.label :email, t("field_names.user.email").capitalize, class: "col-xs-12"
+      .col-xs-7
+        = f.email_field :email, autofocus: true, disabled: true, class: "form-control"
+      .clearfix
+
+    .form-group
+      = f.label :m_first_name, t("field_names.user.m_first_name").capitalize, class: "col-xs-12"
+      .col-xs-7
+        = f.text_field :m_first_name, class: "form-control"
+      .clearfix
+
+    .form-group
+      = f.label :m_last_name, t("field_names.user.m_last_name").capitalize, class: "col-xs-12"
+      .col-xs-7
+        = f.text_field :m_last_name, class: "form-control"
+      .clearfix
+
+    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+      .form-group
+        | Currently waiting confirmation for: 
+        = resource.unconfirmed_email
+
+    .form-group
+      = f.label :password, t("field_names.user.password").capitalize , class: "col-xs-12"
+      i 
+        = t("notes.leave_if_dont_want_to_change")
+      .col-xs-7
+        = f.password_field :password, autocomplete: "off", class: "form-control"
+      .clearfix
+
+    .form-group
+      = f.label :password_confirmation, t("field_names.user.password_confirmation").capitalize, class: "col-xs-12"
+      .col-xs-7
+        = f.password_field :password_confirmation, autocomplete: "off", class: "form-control"
+      .clearfix
+
+    .form-group
+      = f.label :current_password, t("field_names.user.current_password").capitalize, class: "col-xs-12"
+      i 
+        = t("notes.need_your_current_password")
+      .col-xs-7
+        = f.password_field :current_password, autocomplete: "off", class: "form-control"
+      .clearfix
+
+    .form-group
+      = f.submit t("button_texts.save_change"), class: "btn btn-purple"

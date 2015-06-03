@@ -1,0 +1,28 @@
+.container.index-container-01
+  .row
+    .col-xs-12
+      p#notice
+      	= notice
+
+      p
+        strong
+        	| Name:
+        = @category.m_name
+
+      p
+        strong
+        	| Status:
+        = @category.m_status
+
+      p
+        strong
+        	| Parent:
+        = @category.parent_id
+
+      p
+        strong
+        	| User:
+        = @category.user_id
+
+      = link_to 'Edit', edit_category_path(@category) 
+      = link_to 'Back', categories_path

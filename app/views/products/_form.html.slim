@@ -1,0 +1,164 @@
+= form_for @product = Product.new, html: {role: "form", id: "front-end-add-product-form", remote: true} do |f|
+  .modal-dialog 
+    .modal-content 
+      .modal-header 
+        button type="button" class="close" data-dismiss="modal" aria-hidden="true" &times
+        h4.modal-title#add-product-modal-label
+          = t("titles.new_product")
+      .modal-body 
+
+        .row
+          .col-xs-12.flash-for-object
+            = render partial: "shared/flash_for_object", locals: {object: f.object}
+        .form-group
+          = f.label :category_id, t("field_names.product.category").capitalize
+          br
+          = f.select :category_id, options_for_select(list_category_for_select_box, f.object.category_id), {}, {class: "selectpicker form-control", :"data-live-search" => true, :"data-size" => 8}
+          / = f.number_field :category_id, class: "form-control"
+        .form-group
+          = f.label :m_name, t("field_names.product.name").capitalize
+          br
+          = f.text_field :m_name, class: "form-control"
+        .form-group
+          = f.label :m_description, t("field_names.product.description").capitalize
+          br
+          = f.text_area :m_description, class: "form-control"
+        - unless f.object.new_record?
+          .form-group
+            = f.label :m_status, t("field_names.product.status").capitalize
+            br
+            = f.text_field :m_status, class: "form-control"
+        .row
+          .form-group.col-xs-4
+            = f.label :m_price, t("field_names.product.price").capitalize
+            br
+            = f.text_field :m_price, class: "form-control"
+          .form-group.col-xs-4
+            = f.label :m_sale_price, t("field_names.product.sale_price").capitalize
+            br
+            = f.text_field :m_sale_price, class: "form-control"
+          .form-group.col-xs-4
+            = f.label :m_weight, t("field_names.product.weight").capitalize
+            br
+            = f.text_field :m_weight, class: "form-control"
+        .row
+          .form-group.col-xs-4
+            = f.label :m_length, t("field_names.product.length").capitalize
+            br
+            = f.text_field :m_length, class: "form-control"
+          .form-group.col-xs-4
+            = f.label :m_width, t("field_names.product.width").capitalize
+            br
+            = f.text_field :m_width, class: "form-control"
+          .form-group.col-xs-4
+            = f.label :m_height, t("field_names.product.height").capitalize
+            br
+            = f.text_field :m_height, class: "form-control"
+
+        .form-group.product_attribute_fields
+          = f.label :m_attributes, t("field_names.product.attributes").capitalize
+          = render partial: "products/attribute", locals: {name: nil, value: nil, number: nil}
+        = link_to products_add_attribute_path, class: "btn btn-purple btn-add-product-attribute full-width", remote: true, method: :post
+          .fa.fa-plus
+            = " #{t("button_texts.add_more_product_attribute")}"
+
+      .modal-footer 
+        = f.hidden_field :m_attributes, class: "form-control"
+        button type="button" class="btn btn-default" data-dismiss="modal"
+          = t("button_texts.close")
+        = f.submit t("button_texts.save"), class: "btn btn-purple submit"
+
+javascript:
+  $(document).ready(function(){
+    $('.selectpicker').selectpicker();
+
+    $("#front-end-add-product-form .submit").click(function() {
+      update_product_m_attributes_field();
+    });
+    
+    $(".btn-remove").click(function(){
+      id = $(this).attr("id").split("-")[2];
+      $("#attribute-"+id).remove();
+    });
+
+
+    $("#front-end-add-product-form").validate({
+      rules: {
+        "product[m_name]": {
+          required: true,
+          minlength: 6
+        },
+        "product[m_description]": {
+          required: true,
+          minlength: 10
+        },
+        "product[m_status]" : {
+          number: true
+        },
+        "product[m_price]" : {
+          number: true
+        },
+        "product[m_sale_price]" : {
+          number: true
+        },
+        "product[m_weight]" : {
+          number: true
+        },
+        "product[m_length]" : {
+          number: true
+        },
+        "product[m_width]" : {
+          number: true
+        },
+        "product[m_height]" : {
+          number: true
+        },
+        "attribute-name" : {
+          required: true
+        },
+        "attribute-value" : {
+          required: true
+        }
+      },
+      messages: {
+        "product[m_name]": {
+          required: "Vui lòng nhập tên sản phẩm.",
+          minlength: jQuery.validator.format("Tên sản phẩm cần ít nhất {0} ký tự.")
+        },
+        "product[m_description]": {
+          required: "Vui lòng nhập mô tả.",
+          minlength: jQuery.validator.format("Mô tả sản phẩm cần ít nhất {0} ký tự.")
+        },
+        "product[m_status]" : {
+          number: "Vui lòng nhập định dạng số."
+        },
+        "product[m_price]" : {
+          number: "Vui lòng nhập định dạng số."
+        },
+        "product[m_sale_price]" : {
+          number: "Vui lòng nhập định dạng số."
+        },
+        "product[m_weight]" : {
+          number: "Vui lòng nhập định dạng số."
+        },
+        "product[m_length]" : {
+          number: "Vui lòng nhập định dạng số."
+        },
+        "product[m_width]" : {
+          number: "Vui lòng nhập định dạng số."
+        },
+        "product[m_height]" : {
+          number: "Vui lòng nhập định dạng số."
+        },
+        "attribute-name" : {
+          required: "Vui lòng nhập thông tin."
+        },
+        "attribute-value" : {
+          required: "Vui lòng nhập thông tin."
+        }
+      },
+      success: function(label) {
+        label.addClass("valid").text("Ok!")
+      }
+    });
+  });

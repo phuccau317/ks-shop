@@ -1,0 +1,15 @@
+.btn{
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  &.btn-purple{
+    color: #fff;
+    background-color: #9E44E4;
+    border-color: #934DCA;
+    &:hover, &:active{
+      background-color: #9048CA;
+      border-color: #663699;
+    }
+  }
+
+}

@@ -1,0 +1,59 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+vi:
+  devise:
+    confirmations:
+      confirmed: "Tài khoản của bạn đã được xác nhận thành công."
+      send_instructions: "Bạn sẽ nhận được một email với hướng dẫn về cách để xác nhận tài khoản của bạn trong vài phút."
+      send_paranoid_instructions: "Nếu địa chỉ email của bạn tồn tại trong cơ sở dữ liệu của chúng tôi, bạn sẽ nhận được một email với hướng dẫn về cách để xác nhận tài khoản của bạn trong vài phút."
+    failure:
+      already_authenticated: "Bạn đã đăng nhập."
+      inactive: "Tài khoản của bạn chưa được kích hoạt."
+      invalid: "Email hoặc mật khẩu không hợp lệ."
+      locked: "Tài khoản của bạn đã bị khóa."
+      last_attempt: "Bạn còn một lần thử trước khi tài khoản của bạn bị khóa."
+      not_found_in_database: "Email hoặc mật khẩu không hợp lệ."
+      timeout: "Phiên của bạn hết hạn. Vui lòng đăng nhập lại để tiếp tục."
+      unauthenticated: "Bạn cần đăng nhập hoặc đăng ký trước khi tiếp tục."
+      unconfirmed: "Bạn phải xác nhận tài khoản của bạn trước khi tiếp tục."
+    mailer:
+      confirmation_instructions:
+        subject: "Hướng dẫn xác nhận tài khoản"
+      reset_password_instructions:
+        subject: "Hướng dẫn thiết lập lại mật khẩu"
+      unlock_instructions:
+        subject: "Hướng dẫn mở khóa"
+    omniauth_callbacks:
+      failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
+      success: "Successfully authenticated from %{kind} account."
+    passwords:
+      no_token: "Bạn không thể truy cập vào trang này nếu bạn không đến từ một email thiết lập lại mật khẩu. Nếu bạn đến từ một email đặt lại mật khẩu, hãy chắc chắn rằng bạn sử dụng đầy đủ đường dẫn được cung cấp ."
+      send_instructions: "Bạn sẽ nhận được một email với hướng dẫn về cách thiết lập lại mật khẩu của bạn trong vài phút."
+      send_paranoid_instructions: "Nếu địa chỉ email của bạn tồn tại trong cơ sở dữ liệu của chúng tôi, bạn sẽ nhận được một liên kết khôi phục mật khẩu tại địa chỉ email của bạn trong vài phút."
+      updated: "Mật khẩu của bạn đã được thay đổi thành công. Bây giờ bạn đã đăng nhập."
+      updated_not_active: "Mật khẩu của bạn đã được thay đổi thành công."
+    registrations:
+      destroyed: "Tạm biệt! Tài khoản của bạn đã bị hủy bỏ thành công. Chúng tôi hy vọng sẽ gặp lại sớm."
+      signed_up: "Hoan nghênh! Bạn đã đăng ký thành công."
+      signed_up_but_inactive: "Bạn đã đăng ký thành công. Tuy nhiên, chúng tôi không thể đăng nhập bạn vào trong bởi vì tài khoản của bạn chưa được kích hoạt."
+      signed_up_but_locked: "Bạn đã đăng ký thành công. Tuy nhiên, chúng tôi không thể đăng nhập bạn vào trong bởi vì tài khoản của bạn bị khóa ."
+      signed_up_but_unconfirmed: "Một thông điệp có liên kết xác nhận đã được gửi đến địa chỉ email của bạn. Hãy mở link để kích hoạt tài khoản của bạn."
+      update_needs_confirmation: "Bạn cập nhật tài khoản của bạn thành công, nhưng chúng ta cần phải xác minh địa chỉ email mới của bạn. Vui lòng kiểm tra email của bạn và nhấp vào liên kết xác nhận để hoàn tất xác nhận địa chỉ email mới của bạn."
+      updated: "Bạn cập nhật tài khoản của bạn thành công."
+    sessions:
+      signed_in: "Đăng nhập thành công."
+      signed_out: "Đăng xuất thành công."
+    unlocks:
+      send_instructions: "Bạn sẽ nhận được một email với hướng dẫn về cách mở khóa tài khoản của bạn trong vài phút."
+      send_paranoid_instructions: "Nếu tài khoản của bạn tồn tại, bạn sẽ nhận được một email với hướng dẫn về cách để mở khóa nó trong một vài phút."
+      unlocked: "Tài khoản của bạn đã được mở khóa thành công. Vui lòng đăng nhập để tiếp tục."
+  errors:
+    messages:
+      already_confirmed: "đã được xác nhận, vui lòng thử đăng nhập"
+      confirmation_period_expired: "cần xác được xác nhận trong %{period}, xin vui lòng yêu cầu một cái mới"
+      expired: "đã hết hạn, xin vui lòng yêu cầu một cái mới"
+      not_found: "không tồn tại"
+      not_locked: "không bị khóa "
+      not_saved:
+        one: "1 lỗi xuất hiện khi lưu %{resource} này:"
+        other: "%{count} lỗi xuất hiện khi lưu %{resource} này:"

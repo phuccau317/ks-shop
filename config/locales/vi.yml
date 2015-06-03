@@ -1,0 +1,61 @@
+vi: 
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            current_password:
+              blank: Vui lòng nhập mật khẩu hiện tại của bạn để xác nhận
+  errors:
+    blank_product_name: Vui lòng nhập tên sản phẩm
+    blank_description: Vui lòng nhập mô tả
+
+  success:
+    product_created: Sản phẩm của bạn được tạo thành công. Sản phầm này sẽ được duyệt trong thời gian sớm nhất.
+    product_updated: Sản phẩm của bạn được cập nhật thành công.
+
+  field_names:
+    product:
+      name        : Tên sản phẩm
+      description : Mô tả
+      status      : Trạng thái
+      price       : Giá gốc
+      sale_price  : Giá bán
+      weight      : Cân nặng
+      length      : Chiều dài
+      width       : Chiều rộng
+      height      : Chiều cao
+      attributes  : Các thuộc tính khác
+      category    : Danh mục
+    user:
+      email                   : Email
+      m_first_name            : Tên
+      m_last_name             : Họ
+      password                : Mật khẩu
+      password_confirmation   : Xác nhận mật khẩu
+      current_password        : Mật khẩu hiện tại
+
+  notes:
+    leave_if_dont_want_to_change: (Bỏ trống nếu bạn không muốn thay đổi)
+    need_your_current_password: (Vui lòng nhập mật khẩu hiện tại của bạn để xác nhận)
+
+  titles:
+    new_product                : Đăng sản phẩm mới
+    add_new                    : Thêm mới
+    my_profile                 : Tài khoản của tôi
+    my_products                : Sản phẩm của tôi
+    profile_of_user            : 'Thông tin của "%{text}":'
+    update                     : Cập nhật
+
+  button_texts:
+    close                      : Đóng
+    save                       : Lưu
+    update                     : Cập nhật
+    cancel                     : Thoát
+    add_more                   : Thêm nữa
+    add_more_product_attribute : Thêm thuộc tính
+    save_change                : Lưu thay đổi
+
+  placeholders:
+    attribute_name           : Tên thuộc tính
+    value                    : Giá trị

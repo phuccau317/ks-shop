@@ -1,0 +1,14 @@
+.container#flashion
+  .row
+    - flash.each do |type, message|
+      .col-xs-12.main-flash.alert.fade.in class="#{bootstrap_class_for(type)}"
+        button.close data-dismiss="alert" 
+          | ×
+        - if message.kind_of?(Array)
+          ul
+            - message.each do |m|
+              li
+                = m
+        - else
+          = message
+      - flash.clear

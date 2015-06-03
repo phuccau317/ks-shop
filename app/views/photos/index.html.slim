@@ -1,0 +1,35 @@
+h1 Listing photos
+
+table
+  thead
+    tr
+      th M name
+      th Is cover
+      th Category
+      th Display number
+      th Photoable
+      th Photoable type
+      th Image uid
+      th Image name
+      th
+      th
+      th
+
+  tbody
+    - @photos.each do |photo|
+      tr
+        td = photo.m_name
+        td = photo.is_cover
+        td = photo.category_id
+        td = photo.display_number
+        td = photo.photoable_id
+        td = photo.photoable_type
+        td = photo.image_uid
+        td = photo.image_name
+        td = link_to 'Show', photo
+        td = link_to 'Edit', edit_photo_path(photo)
+        td = link_to 'Destroy', photo, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Photo', new_photo_path

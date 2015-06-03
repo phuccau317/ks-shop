@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  strong M username:
+  = @user.m_username
+p
+  strong M first name:
+  = @user.m_first_name
+p
+  strong M last name:
+  = @user.m_last_name
+p
+  strong M email:
+  = @user.email
+p
+  strong M product limit:
+  = @user.m_product_limit
+p
+  strong M user type:
+  = @user.m_user_type
+
+= link_to 'Edit', edit_user_path(@user)
+'|
+= link_to 'Back', users_path

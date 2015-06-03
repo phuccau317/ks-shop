@@ -1,0 +1,12 @@
+<% if @product.errors.any? %>
+  $('#update-product-<%= @product.id %>-modal .flash-for-object').html('<%=j render partial: "shared/flash_for_object", locals: {object: @product} %>');
+
+<% else %>
+  $('#flash-box').html('<%=j render partial: "shared/flash", flash: @flash %>');
+  $('#update-product-<%= @product.id %>-modal').modal('hide');
+  $('#my_products').html('<%=j render partial: "users/registrations/my_products" %>');
+  $("#flashion").delay(3000).fadeOut('medium', function() {
+    $("#flashion").remove();
+  });
+  $(".modal-backdrop").remove();
+<% end %>

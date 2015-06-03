@@ -1,0 +1,10 @@
+- number = Time.now.to_i if number.nil?
+.row id="attribute-#{number}"
+  .form-group.col-xs-4
+    = text_field_tag "attribute-name-#{number}", name, name: "attribute-name", class: "form-control", placeholder: t("placeholders.attribute_name")
+  .form-group.col-xs-4
+    = text_field_tag "attribute-value-#{number}", value, name: "attribute-value", class: "form-control", placeholder: t("placeholders.value")
+  .form-group.col-xs-4
+    .btn.btn-danger.btn-remove id="btn-remove-#{number}"
+      .fa.fa-times
+

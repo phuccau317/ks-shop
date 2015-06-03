@@ -1,0 +1,30 @@
+p#notice = notice
+
+p
+  strong M name:
+  = @photo.m_name
+p
+  strong Is cover:
+  = @photo.is_cover
+p
+  strong Category:
+  = @photo.category_id
+p
+  strong Display number:
+  = @photo.display_number
+p
+  strong Photoable:
+  = @photo.photoable_id
+p
+  strong Photoable type:
+  = @photo.photoable_type
+p
+  strong Image uid:
+  = @photo.image_uid
+p
+  strong Image name:
+  = @photo.image_name
+
+= link_to 'Edit', edit_photo_path(@photo)
+'|
+= link_to 'Back', photos_path

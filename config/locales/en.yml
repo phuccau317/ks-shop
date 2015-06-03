@@ -1,0 +1,63 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  hello: "Hello world"
+  errors:
+    blank_product_name: "Vui lòng nhập tên sản phẩm"
+    blank_description: "Vui lòng nhập mô tả"
+
+  field_names:
+    product:
+      name        : "Tên sản phẩm"
+      description : "Mô tả"
+      status      : "Trạng thái"
+      price       : "Giá gốc"
+      sale_price  : "Giá bán"
+      weight      : "Cân nặng"
+      length      : "Chiều dài"
+      width       : "Chiều rộng"
+      height      : "Chiều cao"
+      attributes  : "Các thông số khác"
+      category    : "Danh mục"
+    user:
+      email                   : "Email"
+      m_first_name            : "Tên"
+      m_last_name             : "Họ"
+      password                : "Mật khẩu"
+      password_confirmation   : "Xác nhận mật khẩu"
+      current_password        : "Mật khẩu hiện tại"
+
+  notes:
+    leave_if_dont_want_to_change: "(leave blank if you don't want to change it)"
+    need_your_current_password: "(we need your current password to confirm your changes)"
+
+  titles:
+    new_product   : "Đăng sản phẩm mới"
+    my_profile    : "Tài khoản của tôi"
+    my_products   : "Sản phẩm của tôi"
+    add_new       : "Thêm mới"
+
+  button_texts:
+    close         : "Đóng"
+    save          : "Lưu"
+    update        : "Lưu thay đổi"
+    cancel        : "Thoát"

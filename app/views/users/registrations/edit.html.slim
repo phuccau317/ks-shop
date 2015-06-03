@@ -1,0 +1,30 @@
+.container.front-end.front-end-user
+  .row
+    .col-xs-12
+
+      ul.nav.nav-tabs.nav-tabs-purple
+        li class="active"
+          a href="#profile" data-toggle="tab" 
+            = t("titles.my_profile")
+        li
+          a href="#my_products" data-toggle="tab"
+            = t("titles.my_products")
+        li
+          a href="#messages" data-toggle="tab" Messages
+        li
+          a href="#settings" data-toggle="tab" Settings
+
+      .tab-content.bg-grey
+        .tab-pane.active#profile
+          = render "user_profile"
+
+        .tab-pane#my_products
+          = render "my_products"
+
+        .tab-pane#messages
+          h2
+            | Messages
+
+        .tab-pane#settings
+          h2
+            | Settings

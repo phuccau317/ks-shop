@@ -1,0 +1,285 @@
+
+.container.top-banner
+  = render "shared/top_banner"
+  
+.container.header-2014
+  = render "shared/header_2014"
+
+.container.index-container-01
+  .row
+    .col-xs-3   
+      nav.navbar.navbar-default.navbar-category role="navigation"
+        .container-fluid
+          .navbar-header
+            a.navbar-brand href="#" All Main Catgories       
+      .list-group.list-group-main-category
+        - @main_categories.each do |category|
+          - badge_number = category.badge_number
+          a.list-group-item href="#" title="Có #{badge_number} sản phẩm"
+            .badge class="#{product_babge_class(badge_number)}"
+              = badge_number
+            = category.m_name
+    .col-xs-9
+      nav.navbar.navbar-default.navbar-category role="navigation"
+        .container-fluid.padding-0
+          / .navbar-header
+          /   a.navbar-brand href="#" All Main Catgories
+          .row
+            .collapse.navbar-collapse#bs-example-navbar-collapse-1
+              ul.nav.navbar-nav
+                li.active
+                  a href="#" Trang chủ
+                li
+                  a href="#" Quần áo
+                li
+                  a href="#" Thực phẩm
+                li
+                  a href="#" Nhóm sản phẩm
+    .col-xs-9.index-first-slider-and-news
+      .col-xs-8
+         .carousel.slide#carousel-example-generic data-ride="carousel"
+            ol.carousel-indicators
+              li.active data-target="#carousel-example-generic" data-slide-to="0"
+              li data-target="#carousel-example-generic" data-slide-to="1"
+              li data-target="#carousel-example-generic" data-slide-to="2"
+
+            .carousel-inner
+              .item.active
+                img data-src="holder.js/900x500/auto/#777:#555/text:First slide" alt="First slide" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzc3NyIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNTU1O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+Rmlyc3Qgc2xpZGU8L3RleHQ+PC9zdmc+"
+                .carousel-caption
+                  | caption1
+
+              .item
+                img data-src="holder.js/900x500/auto/#777:#555/text:First slide" alt="First slide" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzc3NyIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNTU1O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+Rmlyc3Qgc2xpZGU8L3RleHQ+PC9zdmc+"
+                .carousel-caption
+                  | caption2
+
+              .item
+                img data-src="holder.js/900x500/auto/#777:#555/text:First slide" alt="First slide" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzc3NyIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNTU1O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+Rmlyc3Qgc2xpZGU8L3RleHQ+PC9zdmc+"
+                .carousel-caption
+                  | caption3
+
+            / a.left.carousel-control href="#carousel-example-generic" data-slide="prev"
+            /   span.glyphicon.glyphicon-chevron-left
+            / a.right.carousel-control href="#carousel-example-generic" data-slide="next"
+            /   span.glyphicon.glyphicon-chevron-right
+
+         .carousel.mini-3-carousel.slide#carousel-example-generic1 data-ride="carousel"
+            / ol.carousel-indicators
+            /   li.active data-target="#carousel-example-generic1" data-slide-to="0"
+            /   li data-target="#carousel-example-generic1" data-slide-to="1"
+            /   li data-target="#carousel-example-generic1" data-slide-to="2"
+
+            .carousel-inner
+              .item.active
+                .col-xs-4 
+                  img data-src="holder.js/900x500/auto/#777:#555/text:First slide" alt="First slide" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzc3NyIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNTU1O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+Rmlyc3Qgc2xpZGU8L3RleHQ+PC9zdmc+" width="100%"
+
+                .col-xs-4 
+                  img data-src="holder.js/900x500/auto/#777:#555/text:First slide" alt="First slide" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzc3NyIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNTU1O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+Rmlyc3Qgc2xpZGU8L3RleHQ+PC9zdmc+" width="100%"
+
+                .col-xs-4 
+                  img data-src="holder.js/900x500/auto/#777:#555/text:First slide" alt="First slide" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzc3NyIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNTU1O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+Rmlyc3Qgc2xpZGU8L3RleHQ+PC9zdmc+" width="100%"
+                .carousel-caption
+                  | caption1
+
+              .item
+                .col-xs-4 
+                  img data-src="holder.js/900x500/auto/#777:#555/text:First slide" alt="First slide" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzc3NyIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNTU1O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+Rmlyc3Qgc2xpZGU8L3RleHQ+PC9zdmc+" width="100%"
+
+                .col-xs-4 
+                  img data-src="holder.js/900x500/auto/#777:#555/text:First slide" alt="First slide" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzc3NyIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNTU1O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+Rmlyc3Qgc2xpZGU8L3RleHQ+PC9zdmc+" width="100%"
+
+                .col-xs-4 
+                  img data-src="holder.js/900x500/auto/#777:#555/text:First slide" alt="First slide" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzc3NyIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNTU1O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+Rmlyc3Qgc2xpZGU8L3RleHQ+PC9zdmc+" width="100%"
+                .carousel-caption
+                  | caption2
+
+              .item
+                .col-xs-4 
+                  img data-src="holder.js/900x500/auto/#777:#555/text:First slide" alt="First slide" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzc3NyIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNTU1O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+Rmlyc3Qgc2xpZGU8L3RleHQ+PC9zdmc+" width="100%"
+
+                .col-xs-4 
+                  img data-src="holder.js/900x500/auto/#777:#555/text:First slide" alt="First slide" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzc3NyIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNTU1O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+Rmlyc3Qgc2xpZGU8L3RleHQ+PC9zdmc+" width="100%"
+
+                .col-xs-4 
+                  img data-src="holder.js/900x500/auto/#777:#555/text:First slide" alt="First slide" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzc3NyIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNTU1O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+Rmlyc3Qgc2xpZGU8L3RleHQ+PC9zdmc+" width="100%"
+                .carousel-caption
+                  | caption3
+
+            a.left.carousel-control href="#carousel-example-generic1" data-slide="prev"
+              span.glyphicon.glyphicon-chevron-left
+            a.right.carousel-control href="#carousel-example-generic1" data-slide="next"
+              span.glyphicon.glyphicon-chevron-right
+      .col-xs-4  
+        | some thing will gone here!
+
+
+.container.category-nav-category-2
+  .row
+    .portfolio-group
+      - 4.times
+        .col-xs-3.portfolio-item-1
+          .asside
+            = link_to "", "#project-link", target: "blank"
+            .name
+              | name
+            .desc
+              | something about product
+            span.price
+              | 300 k
+          a href="#project-link"
+            = image_tag "exp-img.jpg", class: "product-img"
+
+    .portfolio-group
+      - 4.times
+        .col-xs-3.portfolio-item-1
+          .asside
+            = link_to "", "#project-link", target: "blank"
+            .name
+              | name
+            .desc
+              | something about product
+            span.price
+              | 300 k
+          a href="#project-link"
+            = image_tag "exp-img.jpg", class: "product-img"
+
+
+- @main_categories.each_with_index do |main_category, index|
+  .container class="category-nav-category-#{main_category.id}"
+    .row
+      .col-xs-3   
+        nav.navbar.navbar-default.navbar-category role="navigation"
+          .container-fluid
+            .navbar-header
+              a.navbar-brand id="category-#{main_category.id}" href="category-#{main_category.id}" 
+                / .badge
+                /   = main_category.badge_number_for_sub_categories
+                = main_category.m_name   
+        .col-xs-12
+          .list-group.list-group-sub-category
+            - main_category.sub_catgories.each do |sub_category|
+              - badge_number = sub_category.badge_number
+              a.list-group-item href="#" title="Có #{badge_number} sản phẩm"
+                .badge class="#{product_babge_class(badge_number)}"
+                  = badge_number
+                = sub_category.m_name
+
+      .col-xs-9.nav-tabs-category
+        ul.nav.nav-tabs
+          li.active
+            a href="#home-#{index}" data-toggle="tab" Đặc biệt
+          li 
+            a href="#profile-#{index}" data-toggle="tab" Bán chạy
+          li 
+            a href="#messages-#{index}" data-toggle="tab" Khuyến mãi lớn
+          li 
+            a href="#settings-#{index}" data-toggle="tab" Giảm giá
+
+        .tab-content
+          - products = main_category.products.active.newest(6)
+          .tab-pane.active.specials id="home-#{index}" 
+            .portfolio-group
+              .col-xs-3.portfolio-item
+                a href="#project-link"
+                  img class="img-responsive" src="http://placehold.it/700x400"
+                h4
+                  a href="#project-link"
+                p 
+                  = products[0].m_name
+                p 
+                  = products[0].m_price
+              .col-xs-6.portfolio-item
+                .carousel.slide#carousel-example-generic-2 data-ride="carousel"
+                  ol.carousel-indicators
+                    li.active data-target="#carousel-example-generic-2" data-slide-to="0"
+                    li data-target="#carousel-example-generic-2" data-slide-to="1"
+                    li data-target="#carousel-example-generic-2" data-slide-to="2"
+
+                  .carousel-inner
+                    .item.active
+                      img data-src="holder.js/900x500/auto/#777:#555/text:First slide" alt="First slide" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzc3NyIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNTU1O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+Rmlyc3Qgc2xpZGU8L3RleHQ+PC9zdmc+"
+                      .carousel-caption
+                        | caption1
+
+                    .item
+                      img data-src="holder.js/900x500/auto/#777:#555/text:First slide" alt="First slide" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzc3NyIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNTU1O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+Rmlyc3Qgc2xpZGU8L3RleHQ+PC9zdmc+"
+                      .carousel-caption
+                        | caption2
+
+                    .item
+                      img data-src="holder.js/900x500/auto/#777:#555/text:First slide" alt="First slide" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzc3NyIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNTU1O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+Rmlyc3Qgc2xpZGU8L3RleHQ+PC9zdmc+"
+                      .carousel-caption
+                        | caption3
+
+                  / a.left.carousel-control href="#carousel-example-generic-2" data-slide="prev"
+                  /   span.glyphicon.glyphicon-chevron-left
+                  / a.right.carousel-control href="#carousel-example-generic-2" data-slide="next"
+                  /   span.glyphicon.glyphicon-chevron-right
+              .col-xs-3.portfolio-item
+                a href="#project-link"
+                  img class="img-responsive" src="http://placehold.it/700x400"
+                h4
+                  a href="#project-link"
+                p 
+                  = products[1].m_name
+                p 
+                  = products[1].m_price
+
+            .portfolio-group
+              - (2..5).each do |index|
+                .col-xs-3.portfolio-item.normal
+                  a href="#project-link"
+                    img class="img-responsive" src="http://placehold.it/700x400"
+                  h4
+                    a href="#project-link"
+                  p 
+                    = products[index].m_name
+                  p 
+                    = products[index].m_price
+
+          .tab-pane id="profile-#{index}" 
+            - products = main_category.products.active.newest(8)
+            - products.in_groups_of(4,false) do |group|
+              .portfolio-group
+                - group.each do |product|
+                  .col-xs-3.portfolio-item
+                    a href="#project-link"
+                      img class="img-responsive" src="http://placehold.it/700x400"
+                    h4
+                      a href="#project-link"
+                    p 
+                      = product.m_name
+                    p 
+                      = product.m_price
+
+          .tab-pane id="messages-#{index}" 
+            - products = main_category.products.active.newest(8)
+            - products.in_groups_of(4,false) do |group|
+              .portfolio-group
+                - group.each do |product|
+                  .col-xs-3.portfolio-item
+                    a href="#project-link"
+                      img class="img-responsive" src="http://placehold.it/700x400"
+                    h4
+                      a href="#project-link"
+                    p 
+                      = product.m_name
+                    p 
+                      = product.m_price
+
+          .tab-pane id="settings-#{index}" 
+            - products = main_category.products.active.newest(8)
+            - products.in_groups_of(4,false) do |group|
+              .portfolio-group
+                - group.each do |product|
+                  .col-xs-3.portfolio-item
+                    a href="#project-link"
+                      img class="img-responsive" src="http://placehold.it/700x400"
+                    h4
+                      a href="#project-link"
+                    p 
+                      = product.m_name
+                    p 
+                      = product.m_price
